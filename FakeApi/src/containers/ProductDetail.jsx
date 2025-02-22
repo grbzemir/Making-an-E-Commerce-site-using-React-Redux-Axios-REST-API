@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const { productId } = useParams();
     /*UseParams route işlemlerini gösterir Http urlelerine erişme*/
     const dispatch = useDispatch();
-    console.log(productId);
+    console.log(product);
     const fetchProductsDetail = async () => {
         const response = await axios.get(`https://fakestoreapi.com/products/${productId}`)
             .catch((err) => {
@@ -21,11 +21,14 @@ const ProductDetail = () => {
         dispatch(selectedProduct(response.data));
 
     };
-    return (
-        <div>
-            <h1>Product Detail</h1>
-        </div>
-    );
-};
 
-export default ProductDetail
+    useEffect(() => {
+
+        return (
+            <div>
+                <h1>Product Detail</h1>
+            </div>
+        );
+    };
+
+    export default ProductDetail
