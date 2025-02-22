@@ -4,9 +4,12 @@ import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products);
+
+
     if (products.length === 0) {
         return <div>Loading...</div>;  // Ürünler yüklenene kadar "Loading..." mesajı göster
     }
+
     const renderList = products.map((product) => {
         const { id, title, image, price, category } = product;
         return (
@@ -32,3 +35,6 @@ const ProductComponent = () => {
 };
 
 export default ProductComponent;
+
+
+
