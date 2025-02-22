@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 
 const ProductDetail = () => {
     const product = useSelector((state) => state.product);
+    const { image, title, price, category, description } = product;
     const { productId } = useParams();
     /*UseParams route işlemlerini gösterir Http urlelerine erişme*/
     const dispatch = useDispatch();
