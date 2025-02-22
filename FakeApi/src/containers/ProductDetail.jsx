@@ -4,8 +4,10 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { selectedProduct } from '../redux/actions/productAction'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const ProductDetail = () => {
+    const product = useSelector((state) => state.product);
     const { productId } = useParams();
     /*UseParams route işlemlerini gösterir Http urlelerine erişme*/
     const dispatch = useDispatch();
